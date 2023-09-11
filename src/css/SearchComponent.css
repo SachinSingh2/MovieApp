@@ -1,0 +1,13 @@
+/* Increase specificity to override Bootstrap */
+ .form-control {
+    padding: 5px;
+    width: 100%; /* 100% width by default */
+  }
+  
+  /* Media query for large screens (lg) */
+  @media (min-width: 992px) {
+     .form-control {
+      width: 25% !important; /* 25% width on large screens (lg) */
+    }
+  }
+  

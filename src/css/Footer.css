@@ -1,0 +1,23 @@
+/* Default sticky footer behavior */
+.wrapper {
+    display: flex !important;
+    flex-direction: column !important;
+    min-height: 100vh !important;
+  }
+  
+  footer {
+    margin-top: auto !important;
+  }
+  
+  /* Responsive behavior - Remove sticky footer on small screens */
+  @media (max-width: 768px) {
+    .wrapper {
+      flex-direction: unset !important;
+      min-height: unset !important;
+    }
+  
+    footer {
+      margin-top: 0 !important;
+    }
+  }
+  
