@@ -18,26 +18,26 @@ export default function NavBar() {
     <div className="collapse navbar-collapse" id="navbarSupportedContent">
       <ul className="navbar-nav me-auto mb-2 mb-lg-0">
 
-        <li className="nav-item mx-2">
-          <Link style={{fontSize:"20px" , fontWeight:600 , color:"#b40606"}} className=" nav-link active " aria-current="page" to="/">Home</Link>
+      <li className="nav-item mx-2">
+          <Link style={{fontSize:"20px" , fontWeight:600 , color:"#b40606"}} className=" nav-link active " aria-current="page" to="/"><span data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent">Home</span></Link>
         </li>
 
         <li className="nav-item mx-2">
-          <Link style={{fontSize:"20px" , fontWeight:600 , color:"#b40606"}} className=" nav-link active " aria-current="page" to="/findMovie">FindMovie</Link>
+          <Link style={{fontSize:"20px" , fontWeight:600 , color:"#b40606"}} className=" nav-link active " aria-current="page" to="/findMovie"><span data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent">FindMovie</span></Link>
         </li>
 
 
 
         <li className="nav-item mx-2">
-          <Link style={{fontSize:"20px" , fontWeight:600 , color:"#b40606"}} className=" nav-link active " aria-current="page" to="/upcoming">Up Coming</Link>
+          <Link style={{fontSize:"20px" , fontWeight:600 , color:"#b40606"}} className=" nav-link active " aria-current="page" to="/upcoming"> <span data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent">UpComing</span></Link>
         </li>
 
         <li className="nav-item mx-2">
-          <Link style={{fontSize:"20px" , fontWeight:600 , color:"#b40606"}} className=" nav-link active " aria-current="page" to="/popular">Popular</Link>
+          <Link style={{fontSize:"20px" , fontWeight:600 , color:"#b40606"}} className=" nav-link active " aria-current="page" to="/popular"><span data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent">Popular</span></Link>
         </li>
 
         <li className="nav-item mx-2">
-          <Link style={{fontSize:"20px" , fontWeight:600 , color:"#b40606"}} className=" nav-link active " aria-current="page" to="/about">About</Link>
+          <Link style={{fontSize:"20px" , fontWeight:600 , color:"#b40606"}} className=" nav-link active " aria-current="page" to="/about"><span data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent">About</span></Link>
         </li>
 
       </ul>
