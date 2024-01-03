@@ -1,6 +1,0 @@
-https://www.omdbapi.com/?t=${ScreenValue}&plot=full&apikey=4285dd71`
-
-
-Top-rated = https://api.themoviedb.org/3/movie/top_rated?api_key=6d3364e68670712e53a9932c2c9e34bd
-popular= https://api.themoviedb.org/3/movie/popular?api_key=6d3364e68670712e53a9932c2c9e34bd
-upcoming = https://api.themoviedb.org/3/movie/upcoming?api_key=6d3364e68670712e53a9932c2c9e34bd

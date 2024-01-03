@@ -42,7 +42,7 @@ export default function UpComing() {
 
               <div className="card-body">
                 <h5 className="card-title">{data.title}</h5>
-                <p className="card-text">{data.overview}</p>
+                <p className="card-text">{data.overview.slice(0,118) + '...'}</p>
                 <p>Release Date : - <span className="fw-bold"> {data.release_date} </span></p>
                 <button className="btn" style={{backgroundColor:"#b40606" , color:"white"}}> <Link className="nav-link active" to='/findMovie'>Know More</Link> </button>
               </div>
