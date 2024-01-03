@@ -1,27 +1,31 @@
 import React , {useEffect, useState} from 'react'
 import '../css/Home.css'
 import { Link } from 'react-router-dom'
-import { useDispatch, useSelector } from "react-redux";
-import { fetchUpcomingPopular } from '../Redux/Slices/movieSlice';
 
 export default function HomePage() {
 
-  const dispatch = useDispatch();
   const [data , setData] = useState()
+  
 
-  useEffect(() => {
-    console.log("working");
-    dispatch(fetchUpcomingPopular("upcoming"));
-  }, [dispatch]);
 
-  const { upcomingAndPopular } = useSelector((state) => {
-    return state.movie;
-  });
 
 
   useEffect(()=>{
-    setData(upcomingAndPopular.results.slice(0, 3))
+    const getData = async()=>{
+      const data = await fetch(`https://api.themoviedb.org/3/movie/upcoming?api_key=6d3364e68670712e53a9932c2c9e34bd`)
+      const res = await data.json()
+      if(res.results.length && res.results.length > 0){
+        console.log(res.results)
+        setData(res.results.slice(4,7))
+      }
+    }
+    getData()
   },[])
+
+
+  // useEffect(()=>{
+  //     setData(upcomingAndPopular.results.slice(0, 3))
+  // },[])
 
 // In this we are showing the homepage the landing page of the app
 
@@ -49,19 +53,18 @@ export default function HomePage() {
   
 
 
-  {data && data.length > 0 ? data.map((data , index)=>{
-    return <div  >
 
-    <div   className="bg-image hover-overlay ripple" data-mdb-ripple-color="light"> 
-      <img  data-aos="fade-up" style={{borderRadius:"2px"}} src={`https://image.tmdb.org/t/p/w500/${data.poster_path}`} className="img-fluid" alt="Movie Poster" />
-      <a href="/"> <div className="mask" style={{ backgroundColor: "rgba(251, 251, 251, 0.15)" }}></div> </a>
-    </div>
+  {data && data.length > 0 ? data.map((data,index)=>{
+        return <div key={index} >
 
-
-  </div>
-
+        <div className="bg-image hover-overlay ripple" data-mdb-ripple-color="light"> 
+          <img  data-aos="fade-up" style={{borderRadius:"2px"}} src={`https://image.tmdb.org/t/p/w500/${data.poster_path}`} className="img-fluid" alt="Movie Poster" />
+          <a href="/"> <div className="mask" style={{ backgroundColor: "rgba(251, 251, 251, 0.15)" }}></div> </a>
+        </div>
     
-  }) : <h1>Loading</h1>}
+    
+      </div>
+  }) : <h1 style={{textAlign:"center"}} >Loading...</h1>}
 
 
 
